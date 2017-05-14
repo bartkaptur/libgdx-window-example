@@ -2,7 +2,6 @@ package xyz.codingdaddy.hud.window;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -44,13 +43,8 @@ public class WindowWithTopRightCornerCloseButton extends Window {
 			}
 		});
 		getTitleTable().add(closeButton).size(38, 38).padRight(10).padTop(0);
-	}
 	
-	@Override
-	public void draw(Batch batch, float parentAlpha) {
-		setClip(true);
-		super.draw(batch, parentAlpha);
 		setClip(false);
+		setTransform(true);
 	}
-
 }
